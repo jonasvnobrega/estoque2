@@ -17,19 +17,19 @@ public class EstoqueController {
     @Autowired
     private EstoqueServico es;
 
-    @GetMapping("/listar")
+    @GetMapping("/")
     public void testeApi() {
         System.out.println("A API está funcionado!");
 
       
     }
 
-     @GetMapping("/teste")
+     @GetMapping("/listar")
     public Iterable<ProdutoModelo> listar() {
     return es.listar();
 
 }
-
+@GetMapping("/listar/{id}")
 public ResponseEntity<ProdutoModelo> buscarPorId(@PathVariable Long id) {
     ProdutoModelo produto = es.buscarPorId(id);
 
