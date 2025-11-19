@@ -18,4 +18,8 @@ private ProdutoRepositorio pr;
 
 }
 
+ public ProdutoModelo buscarPorId(Long id) {
+        return pr.findById(id).orElse(null);
+    }
+
 }
